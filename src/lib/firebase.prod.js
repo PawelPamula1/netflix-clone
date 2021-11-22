@@ -1,7 +1,7 @@
 import Firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
-import { seedDatabase } from '../seed';
+// import { seedDatabase } from '../seed';
 
 const config = {
   apiKey: 'AIzaSyBLwz6iVsLl4gAJ--a7xe6fyUooVMZcqaQ',
