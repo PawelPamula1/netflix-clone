@@ -6,6 +6,7 @@ import * as ROUTES from '../constants/routes';
 import logo from '../logo.svg';
 
 export function BrowserContainer({ slides }) {
+  const [searchTerm, setSearchTerm] = useState('');
   const [profile, setProfile] = useState({});
   const [loading, setLoading] = useState(true);
   const { firebase } = useContext(FirebaseContext);
@@ -29,6 +30,7 @@ export function BrowserContainer({ slides }) {
             <Header.TextLink>Films</Header.TextLink>
           </Header.Group>
           <Header.Group>
+            <Header.Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             <Header.Profile>
               <Header.Picture src={user.photoURL} />
               <Header.Dropdown>
@@ -46,9 +48,11 @@ export function BrowserContainer({ slides }) {
         <Header.Feature>
           <Header.FeatureCallOut>Watch Joker Now</Header.FeatureCallOut>
           <Header.Text>
-            Forever alone in a crowd, failed comedian Arthur Fleck seeks connection as he walks the streets of Gotham City. Arthur wears two masks -- the one he
-            paints for his day job as a clown, and the guise he projects in a futile attempt to feel like he's part of the world around him.
+            Forever alone in a crowd, failed comedian Arthur Fleck seeks connection as he walks the streets of Gotham City. Arthur wears two masks --
+            the one he paints for his day job as a clown, and the guise he projects in a futile attempt to feel like he's part of the world around
+            him.
           </Header.Text>
+          <Header.PlayButton>Play</Header.PlayButton>
         </Header.Feature>
       </Header>
     </>
